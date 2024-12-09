@@ -1,5 +1,7 @@
 # FORK
 
+[![osgi-jax-connector-builder](https://github.com/Bluebird-Community/osgi-jax-rs-connector/actions/workflows/osgi-jax-connector-builder.yml/badge.svg)](https://github.com/Bluebird-Community/osgi-jax-rs-connector/actions/workflows/osgi-jax-connector-builder.yml)
+
 The `OSGI - JAX-RS Connector` was forked from [here](https://github.com/hstaudacher/osgi-jax-rs-connector).
 
 The original work was modified in a way, that it fits the needs at the OpenNMS project and may not work outside of an Apache Karaf container anymore.

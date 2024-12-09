@@ -3,9 +3,9 @@ updates:
 
   - package-ecosystem: "maven"
     directory: "/"
-    target-branch: "master"
+    target-branch: "main"
     reviewers:
-      - "OpenNMS/dependabot-reviewers-maven"
+      - "Bluebird-Community/Maintainer"
     labels:
       - "dependencies"
     commit-message:

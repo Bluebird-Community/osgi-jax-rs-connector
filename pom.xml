@@ -7,7 +7,7 @@
 	<packaging>pom</packaging>
 	<name>OSGi - JAX-RS Connector</name>
 	<description>JAX-RS (JSR311) Connector for OSGi</description>
-	<url>https://github.com/OpenNMS/osgi-jax-rs-connector</url>
+	<url>https://github.com/bluebird-community/osgi-jax-rs-connector</url>
 
 	<developers>
 		<developer>
@@ -25,8 +25,8 @@
 	</licenses>
 
 	<scm>
-		<url>https://github.com/OpenNMS/osgi-jax-rs-connector</url>
-		<connection>scm:git:git@github.com:OpenNMS/osgi-jax-rs-connector.git</connection>
+		<url>https://github.com/bluebird-community/osgi-jax-rs-connector</url>
+		<connection>scm:git:git@github.com:bluebird-community/osgi-jax-rs-connector.git</connection>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -119,7 +119,7 @@
 				<extensions>true</extensions>
 				<configuration>
 					<instructions>
-						<Bundle-Vendor>The OpenNMS Group, Inc.</Bundle-Vendor>
+						<Bundle-Vendor>Bluebird Community</Bundle-Vendor>
 						<Bundle-RequiredExecutionEnvironment>${required.jdk.version}</Bundle-RequiredExecutionEnvironment>
 						<Export-Package>com.eclipsesource.*;version="${osgi.compat.version}"</Export-Package>
 						<_dsannotations>*</_dsannotations>
@@ -208,17 +208,6 @@
 					<releaseProfiles>release</releaseProfiles>
 					<!-- default only runs verify, but Karaf itest requires jax-rs-sample to have been installed -->
 					<preparationGoals>clean install</preparationGoals>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.13</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>jaxrs-ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -484,35 +473,12 @@
 	</dependencies>
 	<distributionManagement>
 		<snapshotRepository>
-			<id>jaxrs-ossrh</id>
-			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<id>cloudsmith</id>
+			<url>https://maven.cloudsmith.io/bluebird/bbo-third-party/</url>
 		</snapshotRepository>
 		<repository>
-			<id>jaxrs-ossrh</id>
-			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+			<id>cloudsmith</id>
+			<url>https://maven.cloudsmith.io/bluebird/bbo-third-party/</url>
 		</repository>
 	</distributionManagement>
-	<profiles>
-		<profile>
-			<id>release</id>
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>3.2.4</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-				</plugins>
-			</build>
-		</profile>
-	</profiles>
 </project>
