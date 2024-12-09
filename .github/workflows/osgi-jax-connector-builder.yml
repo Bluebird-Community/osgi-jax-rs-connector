@@ -1,0 +1,35 @@
+---
+name: osgi-jax-connector-builder
+run-name: Build and run test suites
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: quay.io/bluebird/java-builder:0.1.2.jdk-11.b2
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and run tests
+        run: make
+      - name: Persist JAR artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: osgi-jax-connector-jar
+          path: |
+            target/artifacts/*.jar
+      - name: Publish Test Report
+        if: success() || failure()
+        uses: scacap/action-surefire-report@v1
+        with:
+          check_name: Test Report
+      - name: Persist test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: tests-artifacts
+          path: |
+            target/artifacts/surefire-reports
+            target/artifacts/failsafe-reports
