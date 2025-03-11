@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
-	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+		xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.eclipsesource</groupId>
 	<artifactId>osgi-jaxrs-connector</artifactId>
@@ -20,7 +20,7 @@
 		<jackson.version>2.9.8</jackson.version>
 		<jackson.annotation.version>2.9.0</jackson.annotation.version>
 		<jacocoagent>${basedir}/target/lib/jacocoagent.jar</jacocoagent>
-	  	<javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
+		<javadocExecutable>${java.home}/../bin/javadoc</javadocExecutable>
 		<javaee-web-api.version>7.0</javaee-web-api.version>
 		<jaxrs.version>2.1.1</jaxrs.version>
 		<jax-rs-providers.gson.version>2.3</jax-rs-providers.gson.version>
@@ -91,37 +91,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			<!--<plugin>-->
-				<!--<groupId>org.apache.maven.plugins</groupId>-->
-				<!--<artifactId>maven-javadoc-plugin</artifactId>-->
-				<!--<version>2.10</version>-->
-				<!--<executions>-->
-				  <!--<execution>-->
-					<!--<id>attach-javadocs</id>-->
-					<!--<goals>-->
-					  <!--<goal>jar</goal>-->
-					<!--</goals>-->
-				  <!--</execution>-->
-				<!--</executions>-->
-			  <!--</plugin>-->
-				<!-- Configure FindBugs -->
-				<!--<plugin>-->
-					<!--<groupId>org.codehaus.mojo</groupId>-->
-					<!--<artifactId>findbugs-maven-plugin</artifactId>-->
-					<!--<version>${findbugs-version}</version>-->
-					<!--<configuration>-->
-						<!--<findbugsXmlOutput>true</findbugsXmlOutput>-->
-						<!--<failOnError>false</failOnError>-->
-					<!--</configuration>-->
-					<!--<executions>-->
-						<!--<execution>-->
-							<!--<goals>-->
-								<!--<goal>check</goal>-->
-							<!--</goals>-->
-						<!--</execution>-->
-					<!--</executions>-->
-				<!--</plugin>-->
-			</plugins>
+		</plugins>
 	</build>
 	<dependencies>
 		<dependency>
@@ -150,12 +120,14 @@
 	</dependencies>
 	<distributionManagement>
 		<snapshotRepository>
-			<id>cloudsmith</id>
-			<url>https://maven.cloudsmith.io/opennms/3rdparty/</url>
+			<id>bluebird-snapshots</id>
+			<name>Maven Bluebird Snapshots</name>
+			<url>https://repo.maven.bluebirdops.org/snapshots</url>
 		</snapshotRepository>
 		<repository>
-			<id>cloudsmith</id>
-			<url>https://maven.cloudsmith.io/opennms/3rdparty/</url>
+			<id>bluebird-releases</id>
+			<name>Maven Bluebird Releases</name>
+			<url>https://repo.maven.bluebirdops.org/releases</url>
 		</repository>
 	</distributionManagement>
 </project>
