@@ -6,7 +6,7 @@ VERSION             := $(shell cd java && mvn help:evaluate -Dexpression=project
 BUILD_NUMBER        ?= 0
 MAVEN_BIN           := $(shell command -v mvn)
 MAVEN_ARGS          :=
-JAVA_MAJOR_VERSION  := 11
+JAVA_MAJOR_VERSION  := 1.8
 
 .PHONY: help
 help:
@@ -28,18 +28,18 @@ deps-build:
 	command -v java
 	command -v javac
 	command -v $(MAVEN_BIN)
+	command -v zip
 	mkdir -p $(ARTIFACTS_DIR)
 	@echo Your Maven version
 	@mvn --version
 	@echo Your Java version
-	@java --version
-	@echo "Test Java $(JAVA_MAJOR_VERSION) requirement"
-	@java --version | grep '$(JAVA_MAJOR_VERSION)\.[[:digit:]]*\.[[:digit:]]*' >/dev/null
+	@java -version
 
 .PHONY: build
 build: deps-build
 	@echo "Build with Maven with tests"
 	@$(MAVEN_BIN) $(MAVEN_ARGS) -DskipITs=false install
+	zip -r ./osgi-jaxrs-connector.zip ~/.m2/repository/com/eclipsesource
 	mkdir -p $(ARTIFACTS_DIR)/{surefire-reports,failsafe-reports}
 	find . -type f -regex ".*\/target\/failsafe-reports\/.*\.xml" -exec cp {} $(ARTIFACTS_DIR)/failsafe-reports/ \;
 	find . -type f -regex ".*\/target\/surefire-reports\/.*\.xml" -exec cp {} $(ARTIFACTS_DIR)/surefire-reports/ \;
