@@ -1,0 +1,17 @@
+<settings>
+    <servers>
+        <server>
+            <id>${repo.id}</id>
+            <username>${repo.username}</username>
+            <password>${repo.password}</password>
+        </server>
+    </servers>
+    <mirrors>
+        <mirror>
+            <id>mvn.cdn.eu-central-1</id>
+            <name>Maven Cache in EU Central</name>
+            <url>https://mvn.cdn.eu-central-1.bluebirdlabs.tech/upstream</url>
+            <mirrorOf>*</mirrorOf>
+        </mirror>
+    </mirrors>
+</settings>
