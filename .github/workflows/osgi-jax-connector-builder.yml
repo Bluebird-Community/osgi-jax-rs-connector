@@ -33,7 +33,7 @@ jobs:
           path: |
             target/artifacts/surefire-reports
             target/artifacts/failsafe-reports
-      - name: Publish jars to Cloudsmith
+      - name: Publish jars to public Maven repository
         if: startsWith(github.ref, 'refs/tags/v')
         run: |
           make publish MAVEN_REPO=bluebird-releases MAVEN_USERNAME=${{ vars.MAVEN_USERNAME }} MAVEN_PASSWORD=${{ secrets.MAVEN_PASSWORD }}
