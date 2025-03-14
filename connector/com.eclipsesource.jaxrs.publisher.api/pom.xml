@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>com.eclipsesource.jaxrs</groupId>
 		<artifactId>connector</artifactId>
-		<version>1.3.0-SNAPSHOT</version>
+		<version>1.3.0.bbo</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>publisher-api</artifactId>
