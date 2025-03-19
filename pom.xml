@@ -333,12 +333,12 @@
 		<snapshotRepository>
 			<id>bluebird-snapshots</id>
 			<name>Maven Bluebird Snapshots</name>
-			<url>https://repo.maven.bluebirdlabs.tech/snapshots</url>
+			<url>https://repo.maven.bluebirdops.org/snapshots</url>
 		</snapshotRepository>
 		<repository>
 			<id>bluebird-releases</id>
 			<name>Maven Bluebird Releases</name>
-			<url>https://repo.maven.bluebirdlabs.tech/releases</url>
+			<url>https://repo.maven.bluebirdops.org/releases</url>
 		</repository>
 	</distributionManagement>
 </project>

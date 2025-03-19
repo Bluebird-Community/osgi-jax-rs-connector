@@ -10,7 +10,7 @@
         <mirror>
             <id>mvn.cdn.eu-central-1</id>
             <name>Maven Cache in EU Central</name>
-            <url>https://mvn.cdn.eu-central-1.bluebirdlabs.tech/upstream</url>
+            <url>https://mvn.cdn.eu-central-1.bluebirdops.org/upstream</url>
             <mirrorOf>*</mirrorOf>
         </mirror>
     </mirrors>
